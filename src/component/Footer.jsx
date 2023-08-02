@@ -16,13 +16,13 @@ const Footer = ({mode}) => {
                     <p>Where to find me</p>
                     <div className={`flex rounded-[56px] w-2/6 py-3 my-6 shadow-xl ${mode === true ? 'bg-white' : 'bg-black'}`}>
                         <a rel='noopener noreferrer' href='mailto:joao.tadeov@gmail.com' className='flex justify-evenly align-middle items-center'>
-                            <img className='w-1/2 object-contain'src={gmailImg}></img>
+                            <img className='w-1/2 object-contain'src={gmailImg} alt='gmail_img'></img>
                         </a>
                         <a rel='noopener noreferrer' href='https://www.linkedin.com/in/jvtadeo/' target='_blank' className='flex justify-center'>
-                            <img className='w-1/2 object-contain' src={linkedinImg}></img>
+                            <img className='w-1/2 object-contain' src={linkedinImg} alt='linkedin_img'></img>
                         </a>
                         <a rel='noopener noreferrer' href='https://github.com/JvTadeo' target='_blank' className='flex justify-center'>
-                            <img className='w-1/2 object-contain' src={mode === true ? gitHubIcon_Dark : gitHubIcon_White}></img>
+                            <img className='w-1/2 object-contain' src={mode === true ? gitHubIcon_Dark : gitHubIcon_White} alt='github_icon'></img>
                         </a>
                     </div>
                 </div>
@@ -36,13 +36,13 @@ const Footer = ({mode}) => {
                     <p>Where to find me</p>
                     <div className={`flex rounded-[56px] w-2/3 py-3 shadow-xl ${mode === true ? 'bg-white' : 'bg-black'}`}>
                         <a rel='noopener noreferrer' href='mailto:joao.tadeov@gmail.com' className='flex justify-evenly align-middle items-center'>
-                            <img className='w-1/2'src={gmailImg}></img>
+                            <img className='w-1/2'src={gmailImg} alt='gmail_img'></img>
                         </a>
                         <a rel='noopener noreferrer' href='https://www.linkedin.com/in/jvtadeo/' target='_blank' className='flex justify-center'>
-                            <img className='w-1/2' src={linkedinImg}></img>
+                            <img className='w-1/2' src={linkedinImg} alt='linkedin_img'></img>
                         </a>
                         <a rel='noopener noreferrer' href='https://github.com/JvTadeo' target='_blank' className='flex justify-center'>
-                            <img className='w-1/2' src={mode === true ? gitHubIcon_Dark : gitHubIcon_White}></img>
+                            <img className='w-1/2' src={mode === true ? gitHubIcon_Dark : gitHubIcon_White} alt='github_icon'></img>
                         </a>
                     </div>
                 </div>

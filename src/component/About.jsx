@@ -13,7 +13,7 @@ const About = ({mode}) => {
           </div>          
           <div className='flex flex-row items-center'>
             <div className='max-h-[520px] max-w-[320px] mr-5 overflow-hidden rounded-xl shadow-2xl'>
-              <img src={profile} className=' object-contain object-center '></img>
+              <img src={profile} className=' object-contain object-center' alt='profile_img'></img>
             </div>
             <div className='space-y-5 text-xl'>
               <p>Hello, I'm João Vitor Tadeo, a front-end developer passionate about creating amazing digital experiences.</p>
