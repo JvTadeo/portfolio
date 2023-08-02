@@ -31,10 +31,12 @@ function App() {
 
   return (
     <div className='relative min-h-screen m-0' onClick={() => modal === true ? setModal(false) : null }>      
-      <div className='absolute inset-0 z-[-1]'> 
-        <img className= 'w-full h-full object-cover object-center block md:hidden'src={mode === true ? background_normal_white : background_normal_black}></img> 
-        <img className= 'w-full h-full object-cover object-center hidden md:block'src={mode === true ? background_small_size : background_small_black}></img> 
+      <div className='absolute inset-0 z-[-1] block md:hidden'>         
+        <img className= 'w-full h-full object-cover object-center 'src={mode === true ? background_small_size : background_small_black} alt='Background'></img> 
       </div> 
+      <div className='absolute inset-0 z-[-1] hidden md:block'>
+        <img className= 'w-full h-full object-cover center hidden md:block'src={mode === true ? background_normal_white : background_normal_black} alt='Background'></img> 
+      </div>
       <div className='flex flex-row justify-center align-middle items-center h-full'>
         <NavBar        
           mode={mode} 
