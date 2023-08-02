@@ -9,6 +9,7 @@ import Footer from './component/Footer'
 //Background
 import background_small_size from './assets/thumbnail/Background_White_Small.svg'
 import background_small_black from './assets/thumbnail/Background_Black_Small.svg'
+import background_normal_black from './assets/thumbnail/Background_Black_Normal.svg'
 import background_normal_white from './assets/thumbnail/Background_White_Normal.svg'
 function App() {  
 
@@ -32,8 +33,8 @@ function App() {
   return (
     <div className='relative min-h-screen m-0' onClick={() => modal === true ? setModal(false) : null }>      
       <div className='absolute inset-0 z-[-1]'> 
-        <img className= 'w-full h-full object-cover object-center md:hidden'src={mode === true ? background_small_size : background_small_black}></img> 
-        <img className= 'w-full h-full object-cover object-center hidden md:block'src={mode === true ? background_normal_white : background_small_black}></img> 
+        <img className= 'w-full h-full object-cover object-center block md:hidden'src={mode === true ? background_normal_white : background_normal_black}></img> 
+        <img className= 'w-full h-full object-cover object-center hidden md:block'src={mode === true ? background_small_size : background_small_black}></img> 
       </div> 
       <div className='flex flex-row justify-center align-middle items-center h-full'>
         <NavBar        
