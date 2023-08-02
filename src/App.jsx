@@ -30,7 +30,7 @@ function App() {
   }
 
   return (
-    <div className='relative min-h-screen m-0' onClick={() => modal === true ? setModal(false) : null }>      
+    <div className='relative min-h-screen m-0 p-0' onClick={() => modal === true ? setModal(false) : null }>      
       <div className='absolute inset-0 z-[-1] block md:hidden'>         
         <img className= 'w-full h-full object-cover object-center 'src={mode === true ? background_small_size : background_small_black} alt='Background'></img> 
       </div> 
