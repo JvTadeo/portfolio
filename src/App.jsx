@@ -23,7 +23,6 @@ function App() {
 
   const handleModeToggle = () => {
     setMode( mode == false ? true : false);      
-    console.log(mode);
   }
 
   const handleModalToggle = () => {
