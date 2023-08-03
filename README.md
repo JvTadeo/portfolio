@@ -1,8 +1,13 @@
-# React + Vite
+# Portfolio - João Vitor Tadeo
+My personal portfolio, where I talk a bit about myself and my skills.
+It showcases my favorite projects that I have developed, along with my main abilities in various programming languages.
+Developed with React, Vite, and Tailwind, following a Mobile First approach.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Technologies Used
+- HTML
+- CSS (with Tailwind CSS)
+- React.js
+- Vite
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Publication
+The link to access https://jvtadeo.github.io/portfolio/
