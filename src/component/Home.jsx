@@ -5,7 +5,7 @@ import profile_smallsize from '../assets/img/photo_SmartPhone.jpeg'
 
 const Home = ({mode}) => {
   return (
-    <div className={`max-w-[1200px] h-[500px] rounded-2xl flex justify-center items-center backdrop-blur-sm ${mode === true ? 'bg-background-white': 'bg-background-dark'}`}>
+    <div className={`py-14 rounded-2xl flex justify-center items-center backdrop-blur-sm ${mode === true ? 'bg-background-white': 'bg-background-dark'}`}>
         {/* Pc Size*/}
         <div className='hidden md:block md:mx-8'>      
           <div className='flex flex-row font-roboto items-center justify-center'>

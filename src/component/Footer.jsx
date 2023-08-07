@@ -8,7 +8,7 @@ import gitHubIcon_Dark from '../assets/img/GitHub_Icon.png'
 const Footer = ({mode}) => {
   return (
     <div>
-      <div className={`max-w-[1200px] h-max rounded-t-2xl flex justify-center items-center backdrop-blur-sm ${mode === true ? 'bg-background-white text-black' : 'bg-background-dark text-white'}`}>
+      <div className={`h-max rounded-t-2xl flex justify-center items-center backdrop-blur-sm ${mode === true ? 'bg-background-white text-black' : 'bg-background-dark text-white'}`}>
         {/* Pc Size*/}
         <div className='hidden md:block '>                   
             <div className={`flex flex-col text-center`}>            

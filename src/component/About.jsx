@@ -4,7 +4,7 @@ import profile from '../assets/img/profile_aboutHistory.png'
 const About = ({mode}) => {
   return (
     <div>
-      <div className={`max-w-[1200px] h-max rounded-2xl flex justify-center items-center backdrop-blur-sm ${mode === true ? 'bg-background-white': 'bg-background-dark'} ${mode === true ? 'text-black': 'text-white'}`}>
+      <div className={`h-max rounded-2xl flex justify-center items-center backdrop-blur-sm ${mode === true ? 'bg-background-white': 'bg-background-dark'} ${mode === true ? 'text-black': 'text-white'}`}>
         {/* Pc Size*/}
         <div className='hidden md:block font-roboto md:mx-8 py-14'>
           <div className='flex flex-col justify-start text-3xl gap-1 mb-4'>
@@ -25,7 +25,7 @@ const About = ({mode}) => {
             </div>
         </div>
         {/*Smarthphone size*/}
-        <div className='block md:hidden font-roboto w-screen'>
+        <div className='block md:hidden font-roboto w-screen py-4'>
         <div className='flex flex-col mx-2 py-4'>
           <div className='flex flex-col justify-start text-3xl'>
             <p className='font-light'>ABOUT ME</p>

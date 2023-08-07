@@ -3,7 +3,7 @@ import React from 'react'
 const Skills = ({mode}) => {
   return (
     <div>
-      <div className={`max-w-[1200px] h-max rounded-2xl flex justify-center items-center backdrop-blur-sm ${mode === true ? 'bg-background-white': 'bg-background-dark'} ${mode === true ? 'text-black': 'text-white'}`}>
+      <div className={`h-max rounded-2xl flex justify-center items-center backdrop-blur-sm ${mode === true ? 'bg-background-white': 'bg-background-dark'} ${mode === true ? 'text-black': 'text-white'} py-14`}>
         {/* Pc Size*/}
         <div className='hidden md:block'>     
           <div className='flex flex-col'>

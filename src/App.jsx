@@ -30,7 +30,7 @@ function App() {
   }
 
   return (
-    <div className='relative min-h-screen m-0 p-0' onClick={() => modal === true ? setModal(false) : null }>      
+    <div className='relative min-h-screen m-0 p-0 w-full' onClick={() => modal === true ? setModal(false) : null }>      
       <div className='absolute inset-0 z-[-1] block md:hidden'>         
         <img className= 'w-full h-full object-cover object-center 'src={mode === true ? background_small_size : background_small_black} alt='Background'></img> 
       </div> 
@@ -50,23 +50,25 @@ function App() {
           contactRef={contactRef}
         /> 
       </div>           
-      <div className='flex flex-col justify-center align-middle items-center h-full'>             
-        <div ref={homeRef} className='pt-20'>
+      <div className='flex flex-col w-full items-center justify-center'>
+      <div className='max-w-[1200px] flex flex-col justify-center'>             
+        <div ref={homeRef} className='pt-20 flex w-full justify-center items-center'>
           <Home mode={mode}/>                       
         </div>
         <div ref={aboutRef} className='pt-40'>
           <About mode={mode}/>
         </div>
-        <div ref={skillsRef} className='pt-40'>
+        <div ref={skillsRef} className='pt-40 w-full'>
           <Skills mode={mode}/>
         </div>
         <div ref={projectsRef} className='pt-40'>
           <Projects mode={mode}/>
         </div>        
       </div>  
-      <div ref={contactRef} className='pt-40 flex flex-col justify-center align-middle items-center h-full w-full'>
+      <div ref={contactRef} className='pt-40 max-w-[1200px] flex flex-col justify-center align-middle items-center h-full w-full'>
         <Footer mode={mode}/>
-      </div>      
+      </div>     
+      </div> 
     </div>
   )
 }

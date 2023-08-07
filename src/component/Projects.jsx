@@ -10,7 +10,7 @@ import gitHubIcon_Dark from '../assets/img/GitHub_Icon.png'
 const Projects = ({mode}) => {
   return (
     <div>
-      <div className={`max-w-[1200px] h-max rounded-2xl flex justify-center items-center backdrop-blur-sm ${mode === true ? 'bg-background-white': 'bg-background-dark'}`}>
+      <div className={`h-max rounded-2xl flex justify-center items-center backdrop-blur-sm ${mode === true ? 'bg-background-white': 'bg-background-dark'} py-14`}>
         {/* Pc Size*/}
         <div className='hidden md:block font-roboto'>
           <div className={`flex flex-col flex-grow-1 items-center ${mode === true ? 'text-black' : 'text-white'}`}>
