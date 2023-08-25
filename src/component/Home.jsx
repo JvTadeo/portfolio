@@ -1,7 +1,7 @@
 import React from 'react'
 
 //Images Smarthphone size
-import profile_smallsize from '../assets/img/photo_SmartPhone.jpeg'
+import profile_smallsize from '../assets/img/photo_SmartPhone.png'
 
 const Home = ({mode}) => {
   return (
