@@ -11,8 +11,8 @@ const About = ({mode}) => {
               <p className='font-light'>ABOUT ME</p>
               <p className='font-bold'>A little about my history</p>
           </div>          
-          <div className='flex flex-row items-center w-full'>
-            <div className='mr-5 overflow-hidden rounded-xl shadow-2xl w-full'>
+          <div className='flex flex-row items-center w-full gap-x-2'>
+            <div className='rounded-xl shadow-2xl w-full'>
               <img src={profile} className='object-contain object-center max-w-[800px]' alt='profile_img'></img>
             </div>
             <div className='space-y-5 text-xl'>
