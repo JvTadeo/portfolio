@@ -19,8 +19,8 @@ const Home = ({mode, language}) => {
               </div>
               <p className={`w-2/3 text-2xl ${mode === true ? 'text-black' : 'text-white'}`}>{language.home.apresentation_text}</p>
               <div className='flex flex-col gap-2 pt-14 font-normal cursor-pointer max-w-[250px]'>
-                <a className={`rounded-md p-2 ${mode === true ? "text-black" : "text-white"} ${mode === true ? "bg-gray-100" : "bg-slate-800"}`} href={resumePt} download="Resume_Portuguese_João_Vitor_Tadeo.pdf" >{language.home.download_resume_br}</a>
-                <a className={`rounded-md p-2 ${mode === true ? "text-black" : "text-white"} ${mode === true ? "bg-gray-100" : "bg-slate-800"}`} href={resumeEn} download="Resume_English_João_Vitor_Tadeo.pdf" >{language.home.download_resume_en}</a>
+                <a className={`rounded-md p-2 shadow-md ${mode === true ? "text-black" : "text-white"} ${mode === true ? "bg-gray-100" : "bg-slate-800"}`} href={resumePt} download="Resume_Portuguese_João_Vitor_Tadeo.pdf" >{language.home.download_resume_br}</a>
+                <a className={`rounded-md p-2 shadow-md ${mode === true ? "text-black" : "text-white"} ${mode === true ? "bg-gray-100" : "bg-slate-800"}`} href={resumeEn} download="Resume_English_João_Vitor_Tadeo.pdf" >{language.home.download_resume_en}</a>
               </div>
             </div>
             <div>
