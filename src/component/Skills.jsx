@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Skills = ({mode}) => {
+const Skills = ({mode, language}) => {  
   return (
     <div>
       <div className={`h-max rounded-2xl flex justify-center items-center backdrop-blur-sm ${mode === true ? 'bg-background-white': 'bg-background-dark'} ${mode === true ? 'text-black': 'text-white'} py-14`}>
@@ -8,8 +8,8 @@ const Skills = ({mode}) => {
         <div className='hidden md:block'>     
           <div className='flex flex-col'>
             <div className='flex flex-col text-4xl py-2 text-center flex-grow'>
-              <p className='font-light'>SKILLS</p>
-              <p className='font-bold'>My Tech Skills Tree</p>
+              <p className='font-light'>{language.skills.titles}</p>
+              <p className='font-bold'>{language.skills.subtitle}</p>
             </div>
             <div className='grid grid-cols-4 grid-rows-2 text-center font-roboto font-light text-xl mx-36  my-6'>            
                 <div className={`rounded-2xl ${mode === true ? 'bg-[#F8FAFC]' : 'bg-black'} p-3 m-2`}><p>HTML5</p></div>
@@ -26,9 +26,9 @@ const Skills = ({mode}) => {
         {/*Smarthphone size*/}
         <div className='block md:hidden w-screen'>
         <div className='flex flex-col flex-grow-1'>
-          <div className='flex flex-col items-center text-3xl py-2'>
-            <p className='font-light'>SKILLS</p>
-            <p className='font-bold'>My Tech Skills Tree</p>
+          <div className='flex flex-col items-center text-3xl py-2 text-center'>
+            <p className='font-light'>{language.skills.titles}</p>
+            <p className='font-bold'>{language.skills.subtitle}</p>
           </div>
           <div className='grid grid-cols-2 gap-4 text-center font-roboto font-normal text-2xl my-2'>
             <p className={`rounded-2xl ${mode === true ? 'bg-[#F8FAFC]' : 'bg-black'} py-1 m-2`}>HTML5</p>

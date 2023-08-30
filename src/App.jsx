@@ -11,10 +11,13 @@ import background_small_size from './assets/thumbnail/Background_White_Small.svg
 import background_small_black from './assets/thumbnail/Background_Black_Small.svg'
 import background_normal_black from './assets/thumbnail/Background_Black_Normal.svg'
 import background_normal_white from './assets/thumbnail/Background_White_Normal.svg'
-function App() {  
+//Traslations
+import en_language from '../translations/en_language'
+import pt_br from '../translations/pt_br_language'
 
-  const [mode, setMode] = useState(false);
-  const [modal, setModal] = useState(false);
+function App() {  
+  const [selectedLanguage, setSelectedLanguage] = useState('en'); // Padrão para inglês
+  const [mode, setMode] = useState(false);  
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const skillsRef = useRef(null);
@@ -25,12 +28,15 @@ function App() {
     setMode( mode == false ? true : false);      
   }
 
-  const handleModalToggle = () => {
-    setModal( modal == false ? true : false);    
-  }
+  const handleLanguageChange = (event) => {
+    const selectedLang = event
+    setSelectedLanguage(selectedLang);    
+  };
+
+  const translations = selectedLanguage === 'pt_br' ? pt_br : en_language;
 
   return (
-    <div className='relative min-h-screen m-0 p-0 w-full' onClick={() => modal === true ? setModal(false) : null }>      
+    <div className='relative min-h-screen m-0 p-0 w-full'>      
       <div className='absolute inset-0 z-[-1] block md:hidden'>         
         <img className= 'w-full h-full object-cover object-center 'src={mode === true ? background_small_size : background_small_black} alt='Background'></img> 
       </div> 
@@ -38,35 +44,36 @@ function App() {
         <img className= 'w-full h-full object-cover center hidden md:block'src={mode === true ? background_normal_white : background_normal_black} alt='Background'></img> 
       </div>
       <div className='flex flex-row justify-center align-middle items-center h-full'>
-        <NavBar        
+        <NavBar       
           mode={mode} 
-          handleModeToggle={handleModeToggle} 
-          modal={modal} 
-          handleModalToggle={handleModalToggle}  
+          handleModeToggle={handleModeToggle}           
           homeRef={homeRef}
           aboutRef={aboutRef}
           skillsRef={skillsRef}
           projectsRef={projectsRef} 
           contactRef={contactRef}
+          selectedLanguage={selectedLanguage}
+          language={translations}
+          handleLanguageChange = {handleLanguageChange}
         /> 
       </div>           
       <div className='flex flex-col w-full items-center justify-center'>
       <div className='max-w-[1200px] flex flex-col justify-center'>             
         <div ref={homeRef} className='pt-20 flex w-full justify-center items-center'>
-          <Home mode={mode}/>                       
+          <Home mode={mode} language={translations}/>                       
         </div>
         <div ref={aboutRef} className='pt-40'>
-          <About mode={mode}/>
+          <About mode={mode} language={translations}/>
         </div>
         <div ref={skillsRef} className='pt-40 w-full'>
-          <Skills mode={mode}/>
+          <Skills mode={mode} language={translations}/>
         </div>
         <div ref={projectsRef} className='pt-40'>
-          <Projects mode={mode}/>
+          <Projects mode={mode} language={translations}/>
         </div>        
       </div>  
       <div ref={contactRef} className='pt-40 max-w-[1200px] flex flex-col justify-center align-middle items-center h-full w-full'>
-        <Footer mode={mode}/>
+        <Footer mode={mode} language={translations}/>
       </div>     
       </div> 
     </div>

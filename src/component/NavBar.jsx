@@ -1,23 +1,79 @@
-import { useState } from "react"
+import { useState, useEffect, useContext } from "react"
 //Components
 import Modal from "./Modal"
+//Images
+import 'flag-icons/css/flag-icons.min.css';
+import { ModalContext } from "../context/ModalContext";
 
-const NavBar = ({mode, handleModeToggle, modal, handleModalToggle, homeRef, aboutRef, skillsRef, projectsRef, contactRef}) => {
+
+const NavBar = ({mode, handleModeToggle, homeRef, aboutRef, skillsRef, projectsRef, contactRef, language, handleLanguageChange}) => {
+    const {languageOpen, setLanguageOpen, handleModalToggle, setModal} = useContext(ModalContext)
+    const LANGUAGE_SELECTOR_ID = 'language-selector';
+
     const handleScrollToSection = (ref) => {
         ref.current.scrollIntoView({ behavior: 'smooth' })        
-    }
+    }    
 
+    useEffect(() => {
+        const handleWindowClick = (event) => {
+            const target = event.target.closest('button');
+            const modal = event.target.closest('button');        
+            if (target && target.id === LANGUAGE_SELECTOR_ID) {
+                return;            
+            }
+            if(modal && modal.id === "modal"){
+                console.log(modal);
+                return;
+            }
+            setLanguageOpen(false);                  
+            setModal(false);
+        }
+        window.addEventListener('click', handleWindowClick)
+        return () => {
+            window.removeEventListener('click', handleWindowClick);
+        }
+    }, []);
+    
   return (
     <div className="fixed w-full h-[70px] bg-transparent filter backdrop-blur-lg px-8 z-10 top-0 max-w-[1200px]">
         {/* Pc ~ Tablet Size */}        
         <div className="hidden md:flex md:items-center md:align-middle md:justify-between md:h-full">         
             <div className={`flex flex-grow justify-center space-x-5 text-2xl font-light ${mode === true ? 'text-black' : 'text-white'} cursor-pointer`}>
-                <a onClick={() => handleScrollToSection(homeRef)}>Home</a>
-                <a onClick={() => handleScrollToSection(aboutRef)}>About</a>
-                <a onClick={() => handleScrollToSection(skillsRef)}>Skills</a>
-                <a onClick={() => handleScrollToSection(projectsRef)}>Projects</a>
-                <a onClick={() => handleScrollToSection(contactRef)}>Contact</a>
-            </div>
+                <a onClick={() => handleScrollToSection(homeRef)}>{language.navbar.home}</a>
+                <a onClick={() => handleScrollToSection(aboutRef)}>{language.navbar.about}</a>
+                <a onClick={() => handleScrollToSection(skillsRef)}>{language.navbar.skills}</a>
+                <a onClick={() => handleScrollToSection(projectsRef)}>{language.navbar.projects}</a>
+                <a onClick={() => handleScrollToSection(contactRef)}>{language.navbar.contact}</a>
+            </div>            
+            <button onClick={() => setLanguageOpen(!languageOpen)} type="button" id={LANGUAGE_SELECTOR_ID} className={`max-w-120px inline-flex items-center justify-center rounded-md border gap-2 mr-4 px-4 py-2 text-sm font-medium ${mode === true ? 'text-black' : 'text-white'} ${mode === true ? 'bg-white' : 'bg-background-dark'} ${mode === true ? 'border' : 'border-slate-700'}`}>                
+                <img src={`https://hatscripts.github.io/circle-flags/flags/${language.code}.svg`} width="26"/>
+                {language.name}
+                <svg
+                    className="-me-1 ms-2 h-5 w-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                >
+                <path
+                    fillRule="evenodd"
+                    d="M10.293 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L10 12.586l3.293-3.293a1 1 0 011.414 1.414l-4 4z"
+                    clipRule="evenodd"
+                />
+                </svg>        
+            </button>     
+            {languageOpen && <div className={`absolute origin-top-right right-14 mt-24 max-w-46 px-4 py-1 rounded-md shadow-lg ${mode === true ? 'text-black' : 'text-white'} ${mode === true ? 'bg-white' : 'bg-background-dark'} ${mode === true ? 'border' : 'border-slate-700'}`}> {/* Lista de idiomas */}
+                <div className="py-1 grid grid-cols-2 gap-2" >
+                    <button className="flex items-center gap-2" onClick={() => handleLanguageChange('en')}>
+                    <img src="https://hatscripts.github.io/circle-flags/flags/us.svg" width="26"/>               
+                        English
+                    </button>           
+                    <button className="flex items-center gap-2" onClick={() => handleLanguageChange('pt_br')}>
+                        <img src="https://hatscripts.github.io/circle-flags/flags/br.svg" width="26"/>               
+                        Portuguese
+                    </button>                 
+                </div>
+            </div>}       
             <button onClick ={() => handleModeToggle()} className="flex items-center">
             {mode === true ? 
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -32,7 +88,7 @@ const NavBar = ({mode, handleModeToggle, modal, handleModalToggle, homeRef, abou
         </div>
         {/* Smartphone size */}
         <div className="flex align-middle justify-end items-center h-full md:hidden">
-            <button className="" onClick={handleModalToggle}>
+            <button onClick={handleModalToggle} id="modal">
                 {mode === true ? 
                     <svg xmlns="http://www.w3.org/2000/svg" width="43" height="42" viewBox="0 0 43 42" fill="none">
                         <rect x="0.00708008" width="42" height="42" rx="21" fill="white"/>
@@ -52,7 +108,6 @@ const NavBar = ({mode, handleModeToggle, modal, handleModalToggle, homeRef, abou
             <div>                
                 <Modal 
                 mode={mode}
-                modalState={modal}
                 handleScrollToSection={handleScrollToSection}
                 handleModeToggle = {handleModeToggle}
                 homeRef={homeRef}
@@ -60,6 +115,8 @@ const NavBar = ({mode, handleModeToggle, modal, handleModalToggle, homeRef, abou
                 skillsRef={skillsRef}
                 projectsRef={projectsRef} 
                 contactRef={contactRef}
+                language={language}
+                handleLanguageChange={handleLanguageChange}
                 />
             </div>
         </div>
