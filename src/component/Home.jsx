@@ -2,6 +2,9 @@ import React from 'react'
 
 //Images Smarthphone size
 import profile_smallsize from '../assets/img/photo_SmartPhone.png'
+//Documents
+import resumeEn from '../assets/documents/Resume_English_João_Vitor_Tadeo.pdf'
+import resumePt from '../assets/documents/Resume_Portuguese_João_Vitor_Tadeo.pdf'
 
 const Home = ({mode, language}) => {
   return (
@@ -15,6 +18,10 @@ const Home = ({mode, language}) => {
                   <h3 className={`${mode === true ? 'text-black' : 'text-white'}`}>{language.home.title_2} 👋🏻</h3>
               </div>
               <p className={`w-2/3 text-2xl ${mode === true ? 'text-black' : 'text-white'}`}>{language.home.apresentation_text}</p>
+              <div className='flex flex-col gap-2 pt-14 font-normal cursor-pointer max-w-[250px]'>
+                <a className={`rounded-md p-2 ${mode === true ? "text-black" : "text-white"} ${mode === true ? "bg-gray-100" : "bg-slate-800"}`} href={resumePt} download="Resume_Portuguese_João_Vitor_Tadeo.pdf" >{language.home.download_resume_br}</a>
+                <a className={`rounded-md p-2 ${mode === true ? "text-black" : "text-white"} ${mode === true ? "bg-gray-100" : "bg-slate-800"}`} href={resumeEn} download="Resume_English_João_Vitor_Tadeo.pdf" >{language.home.download_resume_en}</a>
+              </div>
             </div>
             <div>
               <img className='object-cover object-center rounded-2xl w-[290px] h-[380px] drop-shadow-lg' src={profile_smallsize} alt='profile_img'></img>  
@@ -31,6 +38,10 @@ const Home = ({mode, language}) => {
                 <h3 className={`${mode === true ? 'text-black' : 'text-white'}`}>{language.home.title_2} 👋🏻</h3>
               </div>
               <p className={`w-2/3 text-lg ${mode === true ? 'text-black' : 'text-white'}`}>{language.home.apresentation_text}</p>
+              <div className='flex flex-col gap-2 h-full items-center pt-14 font-normal text-lg cursor-pointer'>
+                <a className={` rounded-md p-2 ${mode === true ? "text-black" : "text-white"} ${mode === true ? "bg-gray-100" : "bg-slate-800"}`} href={resumePt} download="Resume_Portuguese_João_Vitor_Tadeo.pdf" >{language.home.download_resume_br}</a>
+                <a className={` rounded-md p-2 ${mode === true ? "text-black" : "text-white"} ${mode === true ? "bg-gray-100" : "bg-slate-800"}`} href={resumeEn} download="Resume_English_João_Vitor_Tadeo.pdf" >{language.home.download_resume_en}</a>
+              </div>
             </div>
           </div>
         </div>
