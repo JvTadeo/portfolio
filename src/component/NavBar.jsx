@@ -21,8 +21,7 @@ const NavBar = ({mode, handleModeToggle, homeRef, aboutRef, skillsRef, projectsR
             if (target && target.id === LANGUAGE_SELECTOR_ID) {
                 return;            
             }
-            if(modal && modal.id === "modal"){
-                console.log(modal);
+            if(modal && modal.id === "modal"){                
                 return;
             }
             setLanguageOpen(false);                  
