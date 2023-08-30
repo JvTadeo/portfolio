@@ -1,6 +1,6 @@
 const pt_br_language ={
     code: "br",    
-    name: "Português",
+    name: "Portuguese",
     navbar:{
         home: "Home",
         about: "Sobre",
